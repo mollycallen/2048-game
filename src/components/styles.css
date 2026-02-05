@@ -1,0 +1,723 @@
+/* ============================================
+   REDESIGNED 2048 UI STYLES
+   ============================================ */
+
+/* ============================================
+   BASE & CONTAINER STYLES
+   ============================================ */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    padding-top: 200px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+.game-container {
+    max-width: 756px;
+    width: 100%;
+}
+
+/* ============================================
+   BOARD & TILE STYLES
+   ============================================ */
+.board {
+    margin: 0 auto;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #cdc1b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.tile {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    font-size: 32px;
+    font-weight: bold;
+    transition: all 0.15s ease-in-out;
+}
+
+.tile-2 {
+    background-color: #eee4da;
+    color: #776e65;
+}
+
+.tile-4 {
+    background-color: #ede0c8;
+    color: #776e65;
+}
+
+.tile-8 {
+    background-color: #f2b179;
+    color: #f9f6f2;
+}
+
+.tile-16 {
+    background-color: #f59563;
+    color: #f9f6f2;
+}
+
+.tile-32 {
+    background-color: #f67c5f;
+    color: #f9f6f2;
+}
+
+.tile-64 {
+    background-color: #f65e3b;
+    color: #f9f6f2;
+}
+
+.tile-128 {
+    background-color: #edcf72;
+    color: #f9f6f2;
+}
+
+.tile-256 {
+    background-color: #edcc61;
+    color: #f9f6f2;
+}
+
+.tile-512 {
+    background-color: #edc850;
+    color: #f9f6f2;
+    font-size: 28px;
+}
+
+.tile-1024 {
+    background-color: #edc53f;
+    color: #f9f6f2;
+    font-size: 24px;
+}
+
+.tile-2048 {
+    background-color: #edc22e;
+    color: #f9f6f2;
+    font-size: 24px;
+}
+
+.tile-super {
+    background-color: #3c3a32;
+    color: #f9f6f2;
+    font-size: 20px;
+}
+
+/* ============================================
+   CONTROLS & MISC
+   ============================================ */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.instructions {
+    color: #776e65;
+}
+
+.message {
+    color: #776e65;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 10px;
+    min-height: 25px;
+}
+
+/* ============================================
+   SETTINGS REDESIGN
+   ============================================ */
+.settings-redesign {
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.settings-summary-redesign {
+    background: #ffffff;
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: all 0.2s ease;
+    font-weight: 600;
+    color: #776e65;
+    font-size: 15px;
+    user-select: none;
+}
+
+.settings-summary-redesign::-webkit-details-marker {
+    display: none;
+}
+
+.settings-summary-redesign:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+.settings-icon-redesign {
+    font-size: 20px;
+}
+
+.settings-title-text {
+    flex: 1;
+}
+
+.settings-chevron-redesign {
+    font-size: 12px;
+    color: #a39990;
+    transition: transform 0.3s ease;
+}
+
+.settings-redesign[open] .settings-chevron-redesign {
+    transform: rotate(180deg);
+}
+
+.settings-redesign[open] .settings-summary-redesign {
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.settings-panel {
+    background: #ffffff;
+    margin-top: 0;
+    padding: 16px 20px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    animation: settingsPanelSlide 0.3s ease;
+}
+
+@keyframes settingsPanelSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Compact Setting Rows */
+.setting-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    gap: 16px;
+}
+
+.setting-label-compact {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #776e65;
+    gap: 2px;
+}
+
+.setting-value-display {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8f7a66;
+    background: #f4ece3;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #e8ddd0;
+    white-space: nowrap;
+}
+
+.setting-range-compact {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #d6cdc4;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.setting-range-compact:hover {
+    background: #ccc3ba;
+}
+
+.setting-range-compact::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(143, 122, 102, 0.3);
+    transition: all 0.2s;
+}
+
+.setting-range-compact::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(143, 122, 102, 0.3);
+    transition: all 0.2s;
+}
+
+.setting-range-compact:hover::-webkit-slider-thumb {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(143, 122, 102, 0.4);
+}
+
+.setting-range-compact:hover::-moz-range-thumb {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(143, 122, 102, 0.4);
+}
+
+/* Compact Probability Display */
+.probability-display-compact {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 12px;
+    padding-top: 8px;
+    border-top: 1px solid #f4ece3;
+}
+
+.prob-indicator {
+    font-size: 11px;
+    color: #a39990;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Settings Footer */
+.settings-footer {
+    display: flex;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 2px solid #f4ece3;
+    margin-top: 4px;
+}
+
+.settings-btn-reset,
+.settings-btn-apply {
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.settings-btn-reset {
+    background: #eee4da;
+    color: #776e65;
+}
+
+.settings-btn-reset:hover {
+    background: #e8ddd0;
+    transform: translateY(-2px);
+}
+
+.settings-btn-apply {
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(143, 122, 102, 0.3);
+}
+
+.settings-btn-apply:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 122, 102, 0.4);
+}
+
+.settings-btn-apply:active,
+.settings-btn-reset:active {
+    transform: translateY(0);
+}
+
+/* ============================================
+   SLIDING SETTINGS PANEL
+   ============================================ */
+.settings-sliding-panel {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    height: 100vh;
+    width: 400px;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 200;
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-panel-open {
+    right: 0;
+}
+
+/* Settings Panel Header */
+.settings-sliding-header {
+    padding: 20px 24px;
+    border-bottom: 2px solid #f4ece3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings-header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.settings-icon-sliding {
+    font-size: 20px;
+}
+
+.settings-title-sliding {
+    font-size: 18px;
+    font-weight: 700;
+    color: #776e65;
+    margin: 0;
+}
+
+.settings-close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #a39990;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.2s ease;
+}
+
+.settings-close-btn:hover {
+    color: #776e65;
+}
+
+/* Settings Panel Content */
+.settings-sliding-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.setting-row-sliding {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    gap: 16px;
+}
+
+.setting-label-sliding {
+    display: flex;
+    flex-direction: column;
+    min-width: 140px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #776e65;
+    gap: 4px;
+}
+
+.setting-value-display-sliding {
+    font-size: 12px;
+    font-weight: 700;
+    color: #8f7a66;
+    background: #f4ece3;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: 1px solid #e8ddd0;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.setting-range-sliding {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #d6cdc4;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.setting-range-sliding:hover {
+    background: #ccc3ba;
+}
+
+.setting-range-sliding::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(143, 122, 102, 0.3);
+    transition: all 0.2s;
+}
+
+.setting-range-sliding::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(143, 122, 102, 0.3);
+    transition: all 0.2s;
+}
+
+.setting-range-sliding:hover::-webkit-slider-thumb {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(143, 122, 102, 0.4);
+}
+
+.setting-range-sliding:hover::-moz-range-thumb {
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(143, 122, 102, 0.4);
+}
+
+/* Settings Panel Footer */
+.settings-sliding-footer {
+    padding: 20px 24px;
+    border-top: 2px solid #f4ece3;
+    display: flex;
+    gap: 12px;
+}
+
+.settings-btn-reset-sliding,
+.settings-btn-apply-sliding {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.settings-btn-reset-sliding {
+    background: #eee4da;
+    color: #776e65;
+}
+
+.settings-btn-reset-sliding:hover {
+    background: #e8ddd0;
+    transform: translateY(-2px);
+}
+
+.settings-btn-apply-sliding {
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(143, 122, 102, 0.3);
+}
+
+.settings-btn-apply-sliding:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 122, 102, 0.4);
+}
+
+.settings-btn-apply-sliding:active,
+.settings-btn-reset-sliding:active {
+    transform: translateY(0);
+}
+
+/* Settings Backdrop */
+.settings-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 150;
+    transition: opacity 0.3s ease;
+}
+
+/* ============================================
+   GAME MESSAGE MODALS
+   ============================================ */
+.game-message-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 300;
+    animation: overlayFadeIn 0.3s ease;
+}
+
+@keyframes overlayFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.game-message-modal {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.message-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #776e65;
+    margin: 0 0 16px 0;
+}
+
+.win-message .message-title {
+    color: #f2b179;
+}
+
+.message-text {
+    font-size: 16px;
+    color: #776e65;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.message-subtext {
+    font-size: 14px;
+    color: #8f7a66;
+    margin: 0 0 24px 0;
+}
+
+.final-stats {
+    margin: 20px 0 24px 0;
+    padding: 16px;
+    background: #f4ece3;
+    border-radius: 8px;
+}
+
+.final-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.final-stat:last-child {
+    margin-bottom: 0;
+}
+
+.final-stat-label {
+    font-size: 14px;
+    color: #8f7a66;
+    font-weight: 600;
+}
+
+.final-stat-value {
+    font-size: 16px;
+    color: #776e65;
+    font-weight: 700;
+}
+
+.best-score-achieved {
+    justify-content: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #e8ddd0;
+}
+
+.best-score-achieved .final-stat-label {
+    color: #f2b179;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.message-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.message-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.continue-btn {
+    background: #eee4da;
+    color: #776e65;
+}
+
+.continue-btn:hover {
+    background: #e8ddd0;
+    transform: translateY(-2px);
+}
+
+.new-game-btn {
+    background: linear-gradient(135deg, #8f7a66 0%, #796a5a 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(143, 122, 102, 0.3);
+}
+
+.new-game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(143, 122, 102, 0.4);
+}
+
+.message-btn:active {
+    transform: translateY(0);
+}

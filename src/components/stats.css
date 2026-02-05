@@ -1,0 +1,71 @@
+/* ============================================
+   STATS STYLES
+   ============================================ */
+.stats-grid-compact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.stat-card-compact {
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 8px rgba(242, 177, 121, 0.3);
+}
+
+.stat-card-compact:hover {
+    transform: translateY(-2px);
+}
+
+.stat-score-compact,
+.stat-moves-compact {
+    border: 3px solid #f4ece3;
+}
+
+.stat-best-compact {
+    border: 3px solid #f59563;
+}
+
+.stat-label-compact {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+    color: #8f7a66;
+}
+
+
+
+.stat-value-compact {
+    font-size: 24px;
+    font-weight: 800;
+    color: #776e65;
+}
+
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 640px) {
+    .stats-grid-compact {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-grid-compact {
+        gap: 8px;
+    }
+
+    .stat-card-compact {
+        padding: 12px 8px;
+    }
+
+    .stat-value-compact {
+        font-size: 22px;
+    }
+}
